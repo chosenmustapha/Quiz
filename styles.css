@@ -1,0 +1,27 @@
+body {
+  text-align: center;
+  font-family: sans-serif;
+}
+button {
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+  background-color: bisque;
+}
+
+h4 {
+  font-style: italic;
+}
+
+ul {
+  list-style-type: none;
+  width: 30%;
+  margin: auto;
+}
+
+li {
+  white-space: pre-line;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
