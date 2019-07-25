@@ -48,21 +48,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function loadQuestion() {
   let currentQuestion = questions[question_number];
-  document.querySelector("#question").innerHTML = currentQuestion.question;
-  let options = document.getElementById("options");
+  document.getElementById("question").innerHTML = currentQuestion.question;
+  let options = document.querySelector("#options");
   options.innerHTML = "";
 
-  for (const option of currentQuestion.options) {
-    options.innerHTML += `<button class="option">${option}</button>`;
+  for (option of currentQuestion.options) {
+    options.innerHTML += `<button class="option"> ${option}</button>`;
   }
-
   document.querySelectorAll(".option").forEach(option => {
     option.onclick = () => {
       question_number++;
       currentQuestion.choice = option.textContent;
-      if (option.textContent === currentQuestion.answer) {
-        correct++;
-      }
+
+      if (option.textContent === currentQuestion.answer) correct++;
+
       document.getElementById("correct").innerHTML =
         correct + "|" + question_number;
 
@@ -76,14 +75,17 @@ function gameOver() {
   document.getElementById("gameOver").style = "visibility: visible";
   document.querySelector(
     "#gameOver > h4"
-  ).innerHTML = `You scored ${correct} out of ${questions.length}`;
+  ).innerHTML = `You Scored: ${correct} Out of ${questions.length}`;
 
   questions.map(question => {
     let li = document.createElement("li");
-    li.innerHTML = `<strong>${question.question}</strong>
-    Chose: ${question.choice} 
-    Correct: ${question.answer}
-    ${question.answer === question.choice ? "&check;" : "&times;"}`;
+    li.innerHTML = `<strong>${question.question} </strong>
+                  Chose: ${question.choice}
+                  Correct: ${question.answer}
+                  ${
+                    question.answer === question.choice ? "&check;" : "&times;"
+                  }`;
+
     li.style = `background-color: ${
       question.answer === question.choice ? "green" : "red"
     }`;
