@@ -52,8 +52,8 @@ function loadQuestion() {
   let options = document.querySelector("#options");
   options.innerHTML = "";
 
-  for (option of currentQuestion.options) {
-    options.innerHTML += `<button class="option"> ${option}</button>`;
+  for (const option of currentQuestion.options) {
+    options.innerHTML += `<button class="option">${option}</button>`;
   }
   document.querySelectorAll(".option").forEach(option => {
     option.onclick = () => {
@@ -63,7 +63,7 @@ function loadQuestion() {
       if (option.textContent === currentQuestion.answer) correct++;
 
       document.getElementById("correct").innerHTML =
-        correct + "|" + question_number;
+        correct + " | " + question_number;
 
       question_number >= questions.length ? gameOver() : loadQuestion();
     };
@@ -79,9 +79,9 @@ function gameOver() {
 
   questions.map(question => {
     let li = document.createElement("li");
-    li.innerHTML = `<strong>${question.question} </strong>
-                  Chose: ${question.choice}
-                  Correct: ${question.answer}
+    li.innerHTML = `<strong>${question.question}</strong>
+                  Chose:${question.choice}
+                  Correct:${question.answer}
                   ${
                     question.answer === question.choice ? "&check;" : "&times;"
                   }`;
