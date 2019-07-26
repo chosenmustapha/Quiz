@@ -4,9 +4,10 @@ body {
 }
 button {
   font-size: 20px;
-  padding: 10px;
-  margin: 10px;
-  background-color: bisque;
+  padding: 15px;
+  margin: 15px;
+  background-color: black;
+  color: white;
 }
 
 h4 {
@@ -27,8 +28,27 @@ li {
 }
 
 #design {
-  background-color: greenyellow;
-  border: 5px solid black;
+  background-color: lightgoldenrodyellow;
+  border: 5px solid gold;
   margin: auto;
-  padding: 20px;
+  width: 450px;
+  text-align: center;
+}
+h1 {
+  color: blueviolet;
+}
+body {
+  padding: 0px;
+  background-color: rgb(70, 26, 62);
+}
+h2 {
+  color: maroon;
+}
+
+h4 {
+  color: crimson;
+}
+button:hover {
+  background-color: floralwhite;
+  color: black;
 }
